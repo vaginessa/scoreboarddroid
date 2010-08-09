@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, main!</string>
-    <string name="app_name">scoreBoardDroid</string>
+    <string name="but_new">Comensar partit</string>
+    <string name="but_preferences">Configuració</string>
+    <string name="but_exit">Sortir</string>
+    
+    <string name="select_sport">Selecciona un esport</string>
+    <string-array name="esports">
+		<item>Balonmano</item>
+		<item>Voleibol</item>
+		<item>Futbol</item>
+	</string-array>
 </resources>

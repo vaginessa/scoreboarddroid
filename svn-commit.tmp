@@ -1,0 +1,37 @@
+init
+--This line, and those below, will be ignored--
+
+A    default.properties
+A    assets
+A    AndroidManifest.xml
+A    src
+A    src/frb
+A    src/frb/scoreboarddroid
+A    src/frb/scoreboarddroid/main.java
+A    bin
+AM   bin/scoreBoardDroid.apk
+AM   bin/resources.ap_
+A    bin/frb
+A    bin/frb/scoreboarddroid
+AM   bin/frb/scoreboarddroid/R$string.class
+AM   bin/frb/scoreboarddroid/R$attr.class
+AM   bin/frb/scoreboarddroid/R.class
+AM   bin/frb/scoreboarddroid/R$layout.class
+AM   bin/frb/scoreboarddroid/main.class
+AM   bin/frb/scoreboarddroid/R$drawable.class
+AM   bin/classes.dex
+A    gen
+A    gen/frb
+A    gen/frb/scoreboarddroid
+A    gen/frb/scoreboarddroid/R.java
+A    res
+A    res/values
+A    res/values/strings.xml
+A    res/drawable-hdpi
+AM   res/drawable-hdpi/icon.png
+A    res/drawable-ldpi
+AM   res/drawable-ldpi/icon.png
+A    res/drawable-mdpi
+AM   res/drawable-mdpi/icon.png
+A    res/layout
+A    res/layout/main.xml
