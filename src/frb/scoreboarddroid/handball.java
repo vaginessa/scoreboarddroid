@@ -1,10 +1,13 @@
 package frb.scoreboarddroid;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Chronometer;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Chronometer.OnChronometerTickListener;
 
 
@@ -70,6 +73,18 @@ public class handball extends Activity {
   
     		running = true;
     	}
+    }
+    
+    public void addPoint(View v){
+    	    	
+    	//ImageButton but = (ImageButton) this.findViewById(v.getId());
+    	
+		TextView  points = (TextView) this.findViewById(R.id.point_local);
+		Integer suma = Integer.parseInt(points.getText().toString())+1;
+		points.setText(suma);
+    	
+    	
+    	
     }
     
 }
