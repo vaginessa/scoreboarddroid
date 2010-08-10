@@ -25,7 +25,10 @@ public class handball extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.handballmatch);
         
+        Typeface face=Typeface.createFromAsset(getAssets(), "fonts/DroidLogo.ttf");
+
         crono = (Chronometer) this.findViewById(R.id.crono);
+        crono.setTypeface(face);
         crono.setOnChronometerTickListener(new OnChronometerTickListener(){
         	public void onChronometerTick(Chronometer arg0) {
         		if(currentTime.equalsIgnoreCase("")){

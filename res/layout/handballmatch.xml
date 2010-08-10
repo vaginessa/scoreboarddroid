@@ -14,7 +14,12 @@
 		 	android:text="@+id/Chronometer01"
 		 	android:id="@+id/crono"
 		 	android:layout_width="wrap_content"
-		 	android:layout_height="wrap_content"/>
+		 	android:layout_height="wrap_content"
+		 	android:layout_weight="0"
+      android:paddingBottom="30dip"
+      android:paddingTop="30dip"
+      android:textStyle="bold" 
+      android:textSize="40sp"/>
 	
 		<ToggleButton 
 			android:textOn="@string/but_startOn"
