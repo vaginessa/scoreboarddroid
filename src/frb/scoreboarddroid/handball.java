@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Chronometer.OnChronometerTickListener;
 
 
@@ -16,6 +17,7 @@ public class handball extends Activity {
 	
 	static long tiempo = SystemClock.elapsedRealtime();
 	static boolean running = false;
+	static boolean fin = false;
 	long elapsedTime=0;
 	
 	Chronometer crono;
@@ -35,17 +37,19 @@ public class handball extends Activity {
         crono.setTypeface(face);
         crono.setOnChronometerTickListener(new OnChronometerTickListener(){
         	public void onChronometerTick(Chronometer arg0) {
+        		long seconds = 0;
+        		long minutes = 0;
         		if(currentTime.equalsIgnoreCase("")){
-        			long minutes=((SystemClock.elapsedRealtime()-crono.getBase())/1000)/60;
-        			long seconds=((SystemClock.elapsedRealtime()-crono.getBase())/1000)%60;
+        			minutes=((SystemClock.elapsedRealtime()-crono.getBase())/1000)/60;
+        			seconds=((SystemClock.elapsedRealtime()-crono.getBase())/1000)%60;
         			if(minutes < 10) currentTime = "0"+minutes+":";
         			else currentTime = minutes+":";
         			if(seconds<10) currentTime = currentTime+"0"+seconds;
         			else currentTime = currentTime+seconds;
         			elapsedTime=SystemClock.elapsedRealtime();
         		}else{
-        			long minutes=((elapsedTime-crono.getBase())/1000)/60;
-        			long seconds=((elapsedTime-crono.getBase())/1000)%60;
+        			minutes=((elapsedTime-crono.getBase())/1000)/60;
+        			seconds=((elapsedTime-crono.getBase())/1000)%60;
         			currentTime=minutes+":"+seconds;
         			if(minutes < 10) currentTime = "0"+minutes+":";
         			else currentTime = minutes+":";
@@ -53,6 +57,7 @@ public class handball extends Activity {
         			else currentTime = currentTime+seconds;
         			elapsedTime=elapsedTime+1000;
         		}
+        		
         		arg0.setText(currentTime);
         	}
         });
@@ -97,7 +102,12 @@ public class handball extends Activity {
     }
     
     public void startStopMatch(View v){
-    	if(running){
+    	
+    	if(fin){
+    		crono.stop();
+    		Toast toast = Toast.makeText(getParent(), "stop", Toast.LENGTH_LONG);
+			toast.show();
+    	}else if(running){
     		crono.stop();
             currentTime = "1";
     		running = false;
