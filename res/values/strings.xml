@@ -6,13 +6,13 @@
     <string name="but_new">Comensar partit</string>
     <string name="but_preferences">Configuració</string>
     <string name="but_exit">Sortir</string>
-    <string name="but_startOff">Comensar</string>
+    <string name="but_startOff">Començar</string>
     <string name="but_startOn">Pausar</string>
     <string name="visitor">VISITANT</string>
     <string name="local">LOCAL</string>
     <string name="period">PERIODE</string>
     
-    <string name="select_sport">Selecciona un esport</string>
+    <string name="select_sport">Seleccionar un esport</string>
     <string-array name="esports">
 		<item>Balonmano</item>
 		<item>Voleibol</item>

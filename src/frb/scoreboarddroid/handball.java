@@ -15,6 +15,7 @@ import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 import android.widget.Chronometer.OnChronometerTickListener;
 
 
@@ -115,25 +116,45 @@ public class handball extends Activity {
 
     public void checkTime(){ 
 
+    	t.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+        		long seconds=((elapsedTime-crono.getBase())/1000)%60;
+    			Log.d("TIMER", "aaaaaaaaa"+seconds);
+    			if(seconds > 5){
+    				//fin = true;
+    				ToggleButton but_crono = (ToggleButton) findViewById(R.id.but_start);
+    				crono.stop();   				
+    				but_crono.setChecked(true);
+    				this.cancel();
+    				
+    			}
+            }
+    	}, 300, 1000 );
+    	
+    	/*
     	scanTask = new TimerTask() { 
-    		public void run() { 
-				handler.post(new Runnable() { 
-					public void run() {
-						Log.d("TIMER", "Timer set off"); 
-					} 
-				}); 
+    		public void run() {
+    			long seconds=((elapsedTime-crono.getBase())/1000)%60;
+    			Log.d("TIMER", "aaaaaaaaa"+seconds);
+    			if(seconds == 5){
+    				//fin = true;
+    				ToggleButton but_crono = (ToggleButton) findViewById(R.id.but_start);
+    				but_crono.performClick();
+    				getParent();
+    				//but_crono.toggle();
+    				
+    			}
+				 
     		}}; 
 
 
-    		t.schedule(scanTask, 300, 2000); 
+    		t.schedule(scanTask, 300, 1000);*/ 
     } 
     
     public void startStopMatch(View v){
     	
     	if(fin){
     		crono.stop();
-    		Toast toast = Toast.makeText(getParent(), "stop", Toast.LENGTH_LONG);
-			toast.show();
     	}else if(running){
     		crono.stop();
             currentTime = "1";
