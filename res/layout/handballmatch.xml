@@ -57,8 +57,7 @@
 				android:id="@+id/but_addLocal" 
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content"
-				android:background="@drawable/add"
-				android:onClick="addPoint"/>
+				android:background="@drawable/add"/>
 		  	<TextView
 		  	android:id="@+id/point_local"
 		  	android:text="0"
@@ -66,13 +65,13 @@
 		  	android:layout_height="wrap_content"
 		  	android:background="@drawable/border1"
 		  	android:padding="20dip"
+		  	android:textSize="20sp"
 		  	/>
 	   		<ImageButton 
 	   			android:id="@+id/but_removeLocal"
 	   			android:layout_width="wrap_content" 
 	   			android:layout_height="wrap_content"
-	   			android:background="@drawable/remove"
-	   			android:onClick="removePoint"/>
+	   			android:background="@drawable/remove"/>
 
 		</LinearLayout>  
 		
@@ -96,7 +95,8 @@
 		  	android:textColor="#933535"
 		  	android:background="@drawable/border1"
 		  	android:layout_margin="15dip"
-		  	android:padding="20dip"/>
+		  	android:padding="20dip"
+		  	android:textSize="25sp"/>
 		</LinearLayout>
 		  
 		<LinearLayout
@@ -116,22 +116,21 @@
 				android:id="@+id/but_addVisitor" 
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content"
-				android:background="@drawable/add"
-				android:onClick="addPoint"/>
+				android:background="@drawable/add"/>
 		  	<TextView
 		  	android:id="@+id/point_visitor"
 		  	android:text="0"
 		  	android:layout_width="wrap_content"
 		  	android:layout_height="wrap_content"
 		  	android:background="@drawable/border1"
-		  	android:padding="20dip"/>
+		  	android:padding="20dip"
+		  	android:textSize="20sp"/>
 			
 			<ImageButton 
 				android:id="@+id/but_removeVisitor" 
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content"
-				android:background="@drawable/remove"
-				android:onClick="removePoint"/>
+				android:background="@drawable/remove"/>
 	   </LinearLayout>	
 	
 	
