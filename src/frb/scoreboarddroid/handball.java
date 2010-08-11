@@ -1,9 +1,14 @@
 package frb.scoreboarddroid;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Chronometer;
@@ -20,6 +25,10 @@ public class handball extends Activity {
 	static boolean fin = false;
 	long elapsedTime=0;
 	
+	TimerTask scanTask; 
+    final Handler handler = new Handler(); 
+    Timer t = new Timer(); 
+    
 	Chronometer crono;
 	String currentTime="";
 	Boolean resume=false;
@@ -99,7 +108,25 @@ public class handball extends Activity {
         	}
         });
         
+        
+
+       
     }
+
+    public void checkTime(){ 
+
+    	scanTask = new TimerTask() { 
+    		public void run() { 
+				handler.post(new Runnable() { 
+					public void run() {
+						Log.d("TIMER", "Timer set off"); 
+					} 
+				}); 
+    		}}; 
+
+
+    		t.schedule(scanTask, 300, 2000); 
+    } 
     
     public void startStopMatch(View v){
     	
@@ -112,6 +139,7 @@ public class handball extends Activity {
             currentTime = "1";
     		running = false;
     	}else{
+    		checkTime();
     		if(currentTime.equalsIgnoreCase("")){
     			crono.setBase(SystemClock.elapsedRealtime());
     			crono.start();
