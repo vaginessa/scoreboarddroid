@@ -1,5 +1,6 @@
 package frb.scoreboarddroid;
 
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -8,23 +9,27 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 import android.widget.Chronometer.OnChronometerTickListener;
 
 
 public class handball extends Activity {
 	
+	public static Integer TIME_MATCH = 30;
+	
 	static long tiempo = SystemClock.elapsedRealtime();
 	static boolean running = false;
-	static boolean fin = false;
+	static boolean fin = false;	
+	static Calendar date_match = Calendar.getInstance();
+	
 	long elapsedTime=0;
+	final Handler hnd = new Handler(); 
 	
 	TimerTask scanTask; 
     final Handler handler = new Handler(); 
@@ -43,6 +48,9 @@ public class handball extends Activity {
         
         Typeface face=Typeface.createFromAsset(getAssets(), "fonts/DroidLogo.ttf");
 
+        //agafo el dia i hora del partit
+        
+        
         crono = (Chronometer) this.findViewById(R.id.crono);
         crono.setTypeface(face);
         crono.setOnChronometerTickListener(new OnChronometerTickListener(){
@@ -115,52 +123,41 @@ public class handball extends Activity {
     }
 
     public void checkTime(){ 
-
     	t.scheduleAtFixedRate(new TimerTask() {
-            public void run() {
-        		long seconds=((elapsedTime-crono.getBase())/1000)%60;
-    			Log.d("TIMER", "aaaaaaaaa"+seconds);
-    			if(seconds > 5){
-    				//fin = true;
-    				ToggleButton but_crono = (ToggleButton) findViewById(R.id.but_start);
-    				crono.stop();   				
-    				but_crono.setChecked(true);
-    				this.cancel();
-    				
-    			}
-            }
+    		
+    		public void run() { 
+	    		hnd.post(new Runnable() { 
+	    			public void run() {    			
+	    				long minutes=((elapsedTime-crono.getBase())/1000)/60;
+	        			if(minutes > TIME_MATCH){
+	        				fin = true;
+	        				crono.stop();
+	        				ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
+	        				but_crono.setBackgroundResource(R.drawable.play);
+	        				
+	        			}
+					} 
+				});
+	    		if(fin)
+	    			this.cancel();
+    		}
     	}, 300, 1000 );
     	
-    	/*
-    	scanTask = new TimerTask() { 
-    		public void run() {
-    			long seconds=((elapsedTime-crono.getBase())/1000)%60;
-    			Log.d("TIMER", "aaaaaaaaa"+seconds);
-    			if(seconds == 5){
-    				//fin = true;
-    				ToggleButton but_crono = (ToggleButton) findViewById(R.id.but_start);
-    				but_crono.performClick();
-    				getParent();
-    				//but_crono.toggle();
-    				
-    			}
-				 
-    		}}; 
-
-
-    		t.schedule(scanTask, 300, 1000);*/ 
     } 
     
     public void startStopMatch(View v){
-    	
+    	ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
     	if(fin){
     		crono.stop();
+    		but_crono.setBackgroundResource(R.drawable.play);
     	}else if(running){
     		crono.stop();
             currentTime = "1";
     		running = false;
+    		but_crono.setBackgroundResource(R.drawable.play);
     	}else{
     		checkTime();
+    		but_crono.setBackgroundResource(R.drawable.stop);
     		if(currentTime.equalsIgnoreCase("")){
     			crono.setBase(SystemClock.elapsedRealtime());
     			crono.start();
@@ -183,4 +180,47 @@ public class handball extends Activity {
     	
     }
     
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        menu.add(0, 0, 0, R.string.new_game).setIcon(R.drawable.new_game);
+        menu.add(0, 1, 0, R.string.save_game).setIcon(R.drawable.save_game);
+        menu.add(0, 2, 0, R.string.send_game).setIcon(R.drawable.send_game);        
+        
+        return true;
+    }
+    
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        
+        switch(item.getItemId()) {            
+
+            case 0:            	
+            	ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
+            	but_crono.setBackgroundResource(R.drawable.play);
+            	crono.stop();
+            	crono.setBase(SystemClock.elapsedRealtime());
+            	fin = false;
+            	currentTime = "1";
+        		running = false;
+            	
+            	TextView  pointsl = (TextView) findViewById(R.id.point_local);
+            	pointsl.setText("0");
+            	TextView  pointsv = (TextView) findViewById(R.id.point_visitor);
+            	pointsv.setText("0");
+            	TextView  periode = (TextView) findViewById(R.id.txt_period);
+            	periode.setText("1");
+            return true;
+
+            case 1:
+
+            return true;
+            
+            case 2:
+
+            return true;
+            
+        }
+        return super.onMenuItemSelected(featureId, item);
+    }
 }

@@ -3,7 +3,7 @@
 	<string name="app_name">Marcador Electrònic</string>
 	<string name="title_handball">Balonmano</string>
 
-    <string name="but_new">Comensar partit</string>
+    <string name="but_new">Començar partit</string>
     <string name="but_preferences">Configuració</string>
     <string name="but_exit">Sortir</string>
     <string name="but_startOff">Començar</string>
@@ -11,6 +11,10 @@
     <string name="visitor">VISITANT</string>
     <string name="local">LOCAL</string>
     <string name="period">PERIODE</string>
+    
+    <string name="new_game">Nou</string>
+    <string name="save_game">Guardar</string>
+    <string name="send_game">Enviar</string>
     
     <string name="select_sport">Seleccionar un esport</string>
     <string-array name="esports">
