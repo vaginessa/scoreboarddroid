@@ -5,6 +5,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,11 +24,13 @@ import android.widget.Chronometer.OnChronometerTickListener;
 public class handball extends Activity {
 	
 	public static Integer TIME_MATCH = 30;
+	public static Integer MAX_PERIODE = 2;
 	
 	static long tiempo = SystemClock.elapsedRealtime();
 	static boolean running = false;
 	static boolean fin = false;	
 	static Calendar date_match = Calendar.getInstance();
+	static int periode = 1;
 	
 	long elapsedTime=0;
 	final Handler hnd = new Handler(); 
@@ -60,6 +64,7 @@ public class handball extends Activity {
         		if(currentTime.equalsIgnoreCase("")){
         			minutes=((SystemClock.elapsedRealtime()-crono.getBase())/1000)/60;
         			seconds=((SystemClock.elapsedRealtime()-crono.getBase())/1000)%60;
+        			
         			if(minutes < 10) currentTime = "0"+minutes+":";
         			else currentTime = minutes+":";
         			if(seconds<10) currentTime = currentTime+"0"+seconds;
@@ -68,6 +73,7 @@ public class handball extends Activity {
         		}else{
         			minutes=((elapsedTime-crono.getBase())/1000)/60;
         			seconds=((elapsedTime-crono.getBase())/1000)%60;
+        			if(seconds<0) seconds = 0;
         			currentTime=minutes+":"+seconds;
         			if(minutes < 10) currentTime = "0"+minutes+":";
         			else currentTime = minutes+":";
@@ -80,11 +86,32 @@ public class handball extends Activity {
         	}
         });
         
+        
         //evento click de los botones
         ImageButton but_addLocal = (ImageButton) this.findViewById(R.id.but_addLocal);
         ImageButton but_removeLocal = (ImageButton) this.findViewById(R.id.but_removeLocal);
         ImageButton but_addVisitor = (ImageButton) this.findViewById(R.id.but_addVisitor);
         ImageButton but_removeVisitor = (ImageButton) this.findViewById(R.id.but_removeVisitor);
+        TextView but_periode = (TextView) this.findViewById(R.id.txt_period);
+        but_periode.setOnClickListener(new OnClickListener() {
+        	@Override
+        	public void onClick(View v) {
+        		if(periode > 1){
+	        		ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
+	            	but_crono.setBackgroundResource(R.drawable.play);
+	            	crono.stop();
+	            	crono.setBase(SystemClock.elapsedRealtime());
+	            	fin = false;
+	            	currentTime = "";
+	        		running = false;
+	        		periode = 2;
+	
+	        		TextView but_periode = (TextView) findViewById(R.id.txt_period);
+	        		but_periode.setText(Integer.parseInt(but_periode.getText().toString())+1);
+        		}
+        	}
+        });
+        
         but_addLocal.setOnClickListener(new OnClickListener() {
         	@Override
         	public void onClick(View v) {
@@ -129,21 +156,49 @@ public class handball extends Activity {
 	    		hnd.post(new Runnable() { 
 	    			public void run() {    			
 	    				long minutes=((elapsedTime-crono.getBase())/1000)/60;
-	        			if(minutes > TIME_MATCH){
+	    				//long seconds=((elapsedTime-crono.getBase())/1000)%60;
+	        			if( minutes > TIME_MATCH && !fin){
 	        				fin = true;
-	        				crono.stop();
-	        				ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
-	        				but_crono.setBackgroundResource(R.drawable.play);
-	        				
+	        				endPeriod();        						
 	        			}
 					} 
 				});
-	    		if(fin)
-	    			this.cancel();
+	    		
+	    		if(fin) this.cancel();
     		}
     	}, 300, 1000 );
     	
     } 
+    
+    public void endPeriod(){
+    	
+		crono.stop();
+		ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
+		but_crono.setBackgroundResource(R.drawable.play);
+		
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.end_period);
+		if(periode == MAX_PERIODE)			
+	    	builder.setMessage(R.string.next_time);
+		else			
+	    	builder.setMessage(R.string.end_game);
+
+    	builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				try {
+					this.finalize();
+				} catch (Throwable e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}						
+			}
+    	});
+	    	
+    	AlertDialog alert = builder.create();
+    	alert.show();
+		
+    }
     
     public void startStopMatch(View v){
     	ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
@@ -152,7 +207,7 @@ public class handball extends Activity {
     		but_crono.setBackgroundResource(R.drawable.play);
     	}else if(running){
     		crono.stop();
-            currentTime = "1";
+            currentTime = "";
     		running = false;
     		but_crono.setBackgroundResource(R.drawable.play);
     	}else{
@@ -186,6 +241,7 @@ public class handball extends Activity {
         menu.add(0, 0, 0, R.string.new_game).setIcon(R.drawable.new_game);
         menu.add(0, 1, 0, R.string.save_game).setIcon(R.drawable.save_game);
         menu.add(0, 2, 0, R.string.send_game).setIcon(R.drawable.send_game);        
+        menu.add(0, 3, 0, R.string.but_exit).setIcon(R.drawable.exit);
         
         return true;
     }
@@ -201,15 +257,15 @@ public class handball extends Activity {
             	crono.stop();
             	crono.setBase(SystemClock.elapsedRealtime());
             	fin = false;
-            	currentTime = "1";
+            	currentTime = "";
         		running = false;
             	
             	TextView  pointsl = (TextView) findViewById(R.id.point_local);
             	pointsl.setText("0");
             	TextView  pointsv = (TextView) findViewById(R.id.point_visitor);
             	pointsv.setText("0");
-            	TextView  periode = (TextView) findViewById(R.id.txt_period);
-            	periode.setText("1");
+            	TextView  txt_periode = (TextView) findViewById(R.id.txt_period);
+            	txt_periode.setText("1");
             return true;
 
             case 1:
@@ -219,7 +275,10 @@ public class handball extends Activity {
             case 2:
 
             return true;
-            
+
+            case 3:
+            	finish();
+            return true;
         }
         return super.onMenuItemSelected(featureId, item);
     }

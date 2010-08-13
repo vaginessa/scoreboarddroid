@@ -28,7 +28,6 @@ public class main extends Activity {
 	            	Intent new_intent = new Intent(frb.scoreboarddroid.main.this, handball.class);
 	                new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 	                startActivity(new_intent);	     
-	                finish();
     	        }
     	        
     	    }

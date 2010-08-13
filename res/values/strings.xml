@@ -11,6 +11,10 @@
     <string name="visitor">VISITANT</string>
     <string name="local">LOCAL</string>
     <string name="period">PERIODE</string>
+    <string name="next_time">Si vols començar la segona part fes clic en el numero del periode</string>
+    <string name="end_period">Fi del periode</string>
+    <string name="end_game">Final del partit, si aprateu la tecla menu podeu guardar, envia(sms/email) o començar un nou partit.</string>
+    <string name="ok">Acceptar</string>
     
     <string name="new_game">Nou</string>
     <string name="save_game">Guardar</string>
