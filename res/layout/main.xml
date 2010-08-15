@@ -3,23 +3,55 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/background"
+    android:padding="20dip"    
     >
+    
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    >
+	    <ImageView
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:src="@drawable/scoreboard"
+	    />
+	    <TextView
+	    	android:text="ScoreBoardDroid"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:textStyle="bold"
+	    	android:typeface="sans"
+	    	android:textSize="24sp"
+	    	android:textColor="#6600ff00"	    	   	
+	    	android:layout_gravity="center"
+	    />
+	</LinearLayout>
+	
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-	<Button 
-		android:text="@string/but_new" 
-		android:id="@+id/but_new" 
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content"		
-		android:onClick="startMatch"/>
-	<Button 
-		android:text="@string/but_preferences" 
-		android:id="@+id/but_preferences" 
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content"/>
-	<Button 
-		android:text="@string/but_exit" 
-		android:id="@+id/but_exit" 
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content"
-		android:onClick="exit"/>
+		<Button 
+			android:text="@string/but_new" 
+			android:id="@+id/but_new" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"		
+			android:onClick="startMatch"/>
+		<Button 
+			android:text="@string/but_preferences" 
+			android:id="@+id/but_preferences" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"/>
+		<Button 
+			android:text="@string/but_exit" 
+			android:id="@+id/but_exit" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			android:onClick="exit"/>
+	</LinearLayout>
+	
 </LinearLayout>
