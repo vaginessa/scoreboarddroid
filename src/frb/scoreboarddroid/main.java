@@ -30,6 +30,12 @@ public class main extends Activity {
 	                startActivity(new_intent);	     
     	        }
     	        
+    	        if( items[item].equalsIgnoreCase("Voleibol") ){
+	            	Intent new_intent = new Intent(frb.scoreboarddroid.main.this, beachvoley.class);
+	                new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	                startActivity(new_intent);	     
+    	        }
+    	        
     	    }
     	});
     	AlertDialog alert = builder.create();

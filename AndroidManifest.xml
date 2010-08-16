@@ -17,6 +17,11 @@
             </intent-filter>
         </activity>
 
+		<activity android:name=".beachvoley" android:label="@string/title_beachvoley" android:screenOrientation="landscape">
+            <intent-filter>
+            </intent-filter>
+        </activity>
+        
     </application>
     <uses-sdk android:minSdkVersion="4" />
 

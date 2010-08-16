@@ -2,6 +2,7 @@
 <resources>
 	<string name="app_name">Marcador Electrònic</string>
 	<string name="title_handball">Balonmano</string>
+	<string name="title_beachvoley">Voleibol Platja</string>
 
     <string name="but_new">Començar partit</string>
     <string name="but_preferences">Configuració</string>
