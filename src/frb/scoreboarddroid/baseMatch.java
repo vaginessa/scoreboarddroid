@@ -29,7 +29,7 @@ public class baseMatch extends Activity {
 	static boolean running = false;
 	static boolean fin = false;	
 	static Calendar date_match = Calendar.getInstance();
-	public int periode = 1;
+	public Integer periode = 1;
 	
 	long elapsedTime=0;
 	final Handler hnd = new Handler(); 

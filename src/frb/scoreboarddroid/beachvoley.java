@@ -32,15 +32,14 @@ public class beachvoley extends baseMatch {
         	public void onClick(View v) {
         		
         		periode++;
-
         		TextView but_periode = (TextView) findViewById(R.id.txt_period);
-        		but_periode.setText(periode);
+        		but_periode.setText(periode+"");
         		
         		TextView  pointsl = (TextView) findViewById(R.id.point_local);
         		TextView  pointsv = (TextView) findViewById(R.id.point_visitor);
         		
         		LinearLayout ll = (LinearLayout) findViewById(R.id.resultados);        		
-        		TableLayout etiquetaTabla = dibujarTabla(1,2,2,"#FFFFFF",
+        		TableLayout etiquetaTabla = dibujarTabla(1,2,1,"#FFFFFF",
         				pointsl.getText().toString(),
         				pointsv.getText().toString());
                 ll.addView(etiquetaTabla);
