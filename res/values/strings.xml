@@ -9,22 +9,24 @@
     <string name="but_exit">Sortir</string>
     <string name="but_startOff">Començar</string>
     <string name="but_startOn">Pausar</string>
+    <string name="time_match">Temps</string>
     <string name="visitor">VISITANT</string>
     <string name="local">LOCAL</string>
     <string name="period">PERIODE</string>
-    <string name="next_time">Si vols començar la segona part fes clic en el numero del periode</string>
+    <string name="next_time">Si vols començar la propera part fes clic en el numero del periode</string>
     <string name="end_period">Fi del periode</string>
-    <string name="end_game">Final del partit, si aprateu la tecla menu podeu guardar, envia(sms/email) o començar un nou partit.</string>
+    <string name="end_game">Final del partit, si aprateu la tecla menu podeu envia(sms/email) o començar un nou partit.</string>
     <string name="ok">Acceptar</string>
     
     <string name="new_game">Nou</string>
     <string name="save_game">Guardar</string>
     <string name="send_game">Enviar</string>
     
+    <string name="subject_mail">Resultat del partit</string>
+    
     <string name="select_sport">Seleccionar un esport</string>
     <string-array name="esports">
 		<item>Balonmano</item>
 		<item>Voleibol</item>
-		<item>Futbol</item>
 	</string-array>
 </resources>

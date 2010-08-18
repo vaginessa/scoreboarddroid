@@ -7,6 +7,7 @@ import java.util.TimerTask;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -238,7 +239,7 @@ public class baseMatch extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         menu.add(0, 0, 0, R.string.new_game).setIcon(R.drawable.new_game);
-        menu.add(0, 1, 0, R.string.save_game).setIcon(R.drawable.save_game);
+        //menu.add(0, 1, 0, R.string.save_game).setIcon(R.drawable.save_game);
         menu.add(0, 2, 0, R.string.send_game).setIcon(R.drawable.send_game);        
         menu.add(0, 3, 0, R.string.but_exit).setIcon(R.drawable.exit);
         
@@ -248,6 +249,9 @@ public class baseMatch extends Activity {
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         
+    	TextView  pointsl = (TextView) findViewById(R.id.point_local);
+    	TextView  pointsv = (TextView) findViewById(R.id.point_visitor);
+    	TextView  txt_periode = (TextView) findViewById(R.id.txt_period);
         switch(item.getItemId()) {            
 
             case 0:            	
@@ -259,11 +263,9 @@ public class baseMatch extends Activity {
             	currentTime = "";
         		running = false;
             	
-            	TextView  pointsl = (TextView) findViewById(R.id.point_local);
-            	pointsl.setText("0");
-            	TextView  pointsv = (TextView) findViewById(R.id.point_visitor);
-            	pointsv.setText("0");
-            	TextView  txt_periode = (TextView) findViewById(R.id.txt_period);
+            	
+            	pointsl.setText("0");            	
+            	pointsv.setText("0");            	
             	txt_periode.setText("1");
             return true;
 
@@ -272,7 +274,18 @@ public class baseMatch extends Activity {
             return true;
             
             case 2:
-
+            	
+            	String txt = getString(R.string.time_match)+": "+crono.getBase()+"\n\r"; 
+            	txt+= getString(R.string.local)+": "+pointsl.getText().toString()+"\n\r";
+            	txt+= getString(R.string.visitor)+": "+pointsv.getText().toString()+"\n\r";
+            	txt+= getString(R.string.period)+": "+txt_periode.getText().toString()+"\n\r";
+            	
+            	final Intent emailIntent = new Intent(Intent.ACTION_SEND); 			  
+				      emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject_mail)); 
+				      emailIntent.putExtra(Intent.EXTRA_TEXT, txt);
+				      emailIntent.setType("text/plain");
+				      startActivity(Intent.createChooser(emailIntent, getString(R.string.app_name)));
+				      
             return true;
 
             case 3:

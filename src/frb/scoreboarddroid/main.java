@@ -24,13 +24,13 @@ public class main extends Activity {
     	    public void onClick(DialogInterface dialog, int item) {
     	    	String[] items = getResources().getStringArray(R.array.esports);
 
-    	        if( items[item].equalsIgnoreCase("balonmano") ){
+    	        if( item == 0 ){
 	            	Intent new_intent = new Intent(frb.scoreboarddroid.main.this, handball.class);
 	                new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 	                startActivity(new_intent);	     
     	        }
     	        
-    	        if( items[item].equalsIgnoreCase("Voleibol") ){
+    	        if( item == 1 ){
 	            	Intent new_intent = new Intent(frb.scoreboarddroid.main.this, beachvoley.class);
 	                new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 	                startActivity(new_intent);	     

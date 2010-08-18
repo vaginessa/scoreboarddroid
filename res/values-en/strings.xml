@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, main!</string>
-    <string name="app_name">scoreBoardDroid</string>
+	<string name="app_name">Marcador Electronico</string>
+	<string name="title_handball">Balonmano</string>
+	<string name="title_beachvoley">Voleibol Playa</string>
+
+    <string name="but_new">Empezar partido</string>
+    <string name="but_preferences">Configuracion</string>
+    <string name="but_exit">Salir</string>
+    <string name="but_startOff">Empezar</string>
+    <string name="but_startOn">Parar</string>
+    <string name="time_match">Tiempo</string>
+    <string name="visitor">VISITANTE</string>
+    <string name="local">LOCAL</string>
+    <string name="period">PERIODO</string>
+    <string name="next_time">Si quieres empezar la próxima parte haz click en el numero del periodo</string>
+    <string name="end_period">Fin del periodo</string>
+    <string name="end_game">Final del partido, si haceis click en la tecla menu podreis enviar(sms/email/...) o empezar un nuevo partido.</string>
+    <string name="ok">Aceptar</string>
+    
+    <string name="new_game">Nuevo</string>
+    <string name="save_game">Guardar</string>
+    <string name="send_game">Enviar</string>
+    
+    <string name="subject_mail">Resultado del partido</string>        
+    <string name="select_sport">Seleccionar un deporte</string>
+    
+    <string-array name="esports">
+		<item>Balonmano</item>
+		<item>Voleibol</item>
+	</string-array>
 </resources>
