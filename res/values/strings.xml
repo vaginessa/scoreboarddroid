@@ -31,6 +31,13 @@
 	</string-array>
 	
     
+	
+	<string name="info">Ajuda</string>
+	<string name="send_mail">Enviar consulta</string>
+	<string name="send_question">Enviar dubtes, errors o sugeriments</string>
+	<string name="more_info">Més informació</string>
+	<string name="url">Visita http://ferran.ribell.com</string>
+	<string name="subject_info_mail">ScoreBoardDroid info</string>
 	<string name="idiomes">Idioma</string>
 	<string name="txt_idiomes">Idioma de la aplicació</string>
 	<string-array name="idiomes_values">

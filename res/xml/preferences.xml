@@ -8,6 +8,17 @@
                     android:summary="@string/txt_idiomes"
                     android:entries="@array/idiomes"
                     android:entryValues="@array/idiomes_values" />
-        </PreferenceCategory>
+   </PreferenceCategory>
+   
+   <PreferenceCategory android:title="@string/info">
+		<Preference 
+			android:title="@string/send_mail"
+			android:key="send_mail"
+			android:summary="@string/send_question"/>
+		<Preference 
+			android:title="@string/more_info"
+			android:key="url"
+			android:summary="@string/url"/>
+	</PreferenceCategory>
 
 </PreferenceScreen>

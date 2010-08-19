@@ -12,6 +12,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 
 public class main extends Activity {
@@ -23,13 +24,14 @@ public class main extends Activity {
         
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
         SharedPreferences p =   PreferenceManager.getDefaultSharedPreferences(this);
-        String loc = p.getString("idiomes", "");
+        String loc = p.getString("idioma", "");
+
         if( !loc.equalsIgnoreCase("")){
         	Resources res = getResources();
             Configuration conf = res.getConfiguration();          
             DisplayMetrics dm = res.getDisplayMetrics();
-            res.updateConfiguration(conf, dm);
-        	conf.locale = new Locale(loc);
+            conf.locale = new Locale(loc);
+            res.updateConfiguration(conf, dm);        	
         }
         setContentView(R.layout.main);
         
@@ -65,6 +67,7 @@ public class main extends Activity {
     	Intent new_intent = new Intent(this, scoreboard_pref.class);
         new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(new_intent);
+        finish();
     }
     
     public void exit(View v){

@@ -281,10 +281,10 @@ public class baseMatch extends Activity {
             	txt+= getString(R.string.period)+": "+txt_periode.getText().toString()+"\n\r";
             	
             	final Intent emailIntent = new Intent(Intent.ACTION_SEND); 			  
-				      emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject_mail)); 
-				      emailIntent.putExtra(Intent.EXTRA_TEXT, txt);
-				      emailIntent.setType("text/plain");
-				      startActivity(Intent.createChooser(emailIntent, getString(R.string.app_name)));
+				emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject_mail)); 
+				emailIntent.putExtra(Intent.EXTRA_TEXT, txt);
+				emailIntent.setType("text/plain");
+				startActivity(Intent.createChooser(emailIntent, getString(R.string.app_name)));
 				      
             return true;
 
