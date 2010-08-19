@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="Ubicació">
+                <ListPreference
+                    android:key="ubicacio"
+                    android:title="Ubicació preferida"
+                    android:summary="Ubicació per defecte per visualitza les dades"
+                    android:entries="@array/localitats"
+                    android:entryValues="@array/localitats" />
+        </PreferenceCategory>
+
+        <PreferenceCategory android:title="Mapa">
+                <ListPreference
+                    android:key="mapa_widget"
+                    android:title="Mapa del widget"
+                    android:summary="Veure el mapa de pluges o el de predicció"
+                    android:entries="@array/mapes"
+                    android:defaultValue="Radar"
+                    android:entryValues="@array/mapes" />
+	</PreferenceCategory>
+
+</PreferenceScreen>

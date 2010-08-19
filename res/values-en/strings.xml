@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Marcador Electronico</string>
-	<string name="title_handball">Balonmano</string>
-	<string name="title_beachvoley">Voleibol Playa</string>
+	<string name="app_name">Electronic Scoreboard</string>
+	<string name="title_handball">HandBall</string>
+	<string name="title_beachvoley">BeachVoley</string>
 
-    <string name="but_new">Empezar partido</string>
-    <string name="but_preferences">Configuracion</string>
-    <string name="but_exit">Salir</string>
-    <string name="but_startOff">Empezar</string>
-    <string name="but_startOn">Parar</string>
-    <string name="time_match">Tiempo</string>
-    <string name="visitor">VISITANTE</string>
+    <string name="but_new">Start Game</string>
+    <string name="but_preferences">Preferences</string>
+    <string name="but_exit">Exit</string>
+    <string name="but_startOff">start</string>
+    <string name="but_startOn">Stop</string>
+    <string name="time_match">Time</string>
+    <string name="visitor">VISITOR</string>
     <string name="local">LOCAL</string>
-    <string name="period">PERIODO</string>
-    <string name="next_time">Si quieres empezar la próxima parte haz click en el numero del periodo</string>
-    <string name="end_period">Fin del periodo</string>
-    <string name="end_game">Final del partido, si haceis click en la tecla menu podreis enviar(sms/email/...) o empezar un nuevo partido.</string>
-    <string name="ok">Aceptar</string>
+    <string name="period">PERIOD</string>
+    <string name="next_time">If you want to start the next period click on the number of period</string>
+    <string name="end_period">End of period</string>
+    <string name="end_game">End of the game, If you do click the menu button You will be able to send (sms / email /...) or start a new game</string>
+    <string name="ok">OK</string>
     
-    <string name="new_game">Nuevo</string>
-    <string name="save_game">Guardar</string>
-    <string name="send_game">Enviar</string>
+    <string name="new_game">New</string>
+    <string name="save_game">Save</string>
+    <string name="send_game">Send</string>
     
-    <string name="subject_mail">Resultado del partido</string>        
-    <string name="select_sport">Seleccionar un deporte</string>
+    <string name="subject_mail">Result match </string>        
+    <string name="select_sport">Select a sport</string>
     
     <string-array name="esports">
-		<item>Balonmano</item>
-		<item>Voleibol</item>
+		<item>HandBall</item>
+		<item>BeachVoley</item>
 	</string-array>
 </resources>
