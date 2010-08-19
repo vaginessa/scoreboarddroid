@@ -45,7 +45,8 @@
 			android:text="@string/but_preferences" 
 			android:id="@+id/but_preferences" 
 			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content"
+			android:onClick="openPreferences"/>
 		<Button 
 			android:text="@string/but_exit" 
 			android:id="@+id/but_exit" 

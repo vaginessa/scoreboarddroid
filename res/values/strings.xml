@@ -3,7 +3,7 @@
 	<string name="app_name">Marcador Electrònic</string>
 	<string name="title_handball">Balonmano</string>
 	<string name="title_beachvoley">Voleibol Platja</string>
-
+	
     <string name="but_new">Començar partit</string>
     <string name="but_preferences">Configuració</string>
     <string name="but_exit">Sortir</string>
@@ -24,9 +24,23 @@
     
     <string name="subject_mail">Resultat del partit</string>
     
-    <string name="select_sport">Seleccionar un esport</string>
+    <string name="select_sport">Seleccionar un esport</string>    
     <string-array name="esports">
 		<item>Balonmano</item>
 		<item>Voleibol</item>
+	</string-array>
+	
+    
+	<string name="idiomes">Idioma</string>
+	<string name="txt_idiomes">Idioma de la aplicació</string>
+	<string-array name="idiomes_values">
+		<item>ca</item>
+		<item>es</item>
+		<item>en</item>
+	</string-array>
+    <string-array name="idiomes">
+		<item>Català</item>
+		<item>Español</item>
+		<item>English</item>
 	</string-array>
 </resources>
