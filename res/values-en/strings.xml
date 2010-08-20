@@ -29,4 +29,22 @@
 		<item>HandBall</item>
 		<item>BeachVoley</item>
 	</string-array>
+	<string name="info">Help</string>
+	<string name="send_mail">Send petition</string>
+	<string name="send_question">Send questions, suggestions or mistakes</string>
+	<string name="more_info">More information</string>
+	<string name="url">Visit http://ferran.ribell.com</string>
+	<string name="subject_info_mail">ScoreBoardDroid info</string>
+	<string name="idiomes">Lenguage</string>
+	<string name="txt_idiomes">Lenguage of the application</string>
+	<string-array name="idiomes_values">
+		<item>ca</item>
+		<item>es</item>
+		<item>en</item>
+	</string-array>
+    <string-array name="idiomes">
+		<item>Català</item>
+		<item>Español</item>
+		<item>English</item>
+	</string-array>
 </resources>
