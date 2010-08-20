@@ -55,4 +55,10 @@
 			android:onClick="exit"/>
 	</LinearLayout>
 	
+	<ImageView
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/fons_down"/>
+    
 </LinearLayout>
