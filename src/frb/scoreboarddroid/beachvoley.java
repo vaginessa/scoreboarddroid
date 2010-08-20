@@ -23,6 +23,7 @@ public class beachvoley extends baseMatch {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.beachvoleymatch);
         
+        sport = "beachvoley";
         ini();
         
         TextView but_periode = (TextView) this.findViewById(R.id.txt_period);
@@ -37,7 +38,8 @@ public class beachvoley extends baseMatch {
         		
         		TextView  pointsl = (TextView) findViewById(R.id.point_local);
         		TextView  pointsv = (TextView) findViewById(R.id.point_visitor);
-        		
+        		result_local += pointsl.getText().toString()+",";
+        		result_visitor += pointsv.getText().toString()+",";
         		LinearLayout ll = (LinearLayout) findViewById(R.id.resultados);        		
         		TableLayout etiquetaTabla = dibujarTabla(1,2,1,"#FFFFFF",
         				pointsl.getText().toString(),
@@ -52,10 +54,10 @@ public class beachvoley extends baseMatch {
     }
     
     /*
-     * Método dibujarTabla
+     * Mï¿½todo dibujarTabla
      * Devuelve una TableLayout con borde
      * recibe:
-     *  tamaño del borde - int
+     *  tamaï¿½o del borde - int
      *  numero de filas - int
      *  numero de columnas - int
      *  color en Hexadecimal #FFFFFF - String
@@ -68,12 +70,12 @@ public class beachvoley extends baseMatch {
 		  int numeroCeldas = numeroFilas * numeroColumnas;
 		   
 		  /* Calculo el Ancho de la siguiente manera:
-		   * El ancho de la pantalla los divido entre el nº de columnas y le resto
-		   * el tamaño del borde que esta sumado al borde dividido entre el nº de columnas
+		   * El ancho de la pantalla los divido entre el nï¿½ de columnas y le resto
+		   * el tamaï¿½o del borde que esta sumado al borde dividido entre el nï¿½ de columnas
 		   * (a causa del borde derecho de la ultima columna)
 		   */		   
 		  int ancho=(getWindowManager().getDefaultDisplay().getWidth()/numeroColumnas)-(tamBorde+(tamBorde/(numeroColumnas)));
-		  //No se porqué pero si le resto uno funciona...
+		  //No se porquï¿½ pero si le resto uno funciona...
 		  ancho--;
 		   
 		  int contadorColumnas=0;
@@ -122,10 +124,10 @@ public class beachvoley extends baseMatch {
 	          //texto.setWidth(ancho);
 	          texto.setGravity(Gravity.CLIP_HORIZONTAL);
 	          texto.setPadding(2, 2, 2, 2);
-	          //Importante el color, porque si no se verá de color del borde!!
+	          //Importante el color, porque si no se verï¿½ de color del borde!!
 			  texto.setBackgroundColor(Color.BLACK);
 			   
-			  //Al borde le añadimos el texto
+			  //Al borde le aï¿½adimos el texto
 			  borde.addView(texto);
 			   
 			  //Y a la fila el borde con el texto

@@ -17,6 +17,7 @@
     <string name="end_period">End of period</string>
     <string name="end_game">End of the game, If you do click the menu button You will be able to send (sms / email /...) or start a new game</string>
     <string name="ok">OK</string>
+    <string name="result_period">Results of period</string>
     
     <string name="new_game">New</string>
     <string name="save_game">Save</string>

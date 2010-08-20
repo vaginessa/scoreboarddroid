@@ -17,6 +17,7 @@
     <string name="end_period">Fi del periode</string>
     <string name="end_game">Final del partit, si aprateu la tecla menu podeu envia(sms/email) o començar un nou partit.</string>
     <string name="ok">Acceptar</string>
+    <string name="result_period">Resultat dels periodes</string>
     
     <string name="new_game">Nou</string>
     <string name="save_game">Guardar</string>

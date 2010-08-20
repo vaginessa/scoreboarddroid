@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Chronometer.OnChronometerTickListener;
 
@@ -31,6 +32,9 @@ public class baseMatch extends Activity {
 	static boolean fin = false;	
 	static Calendar date_match = Calendar.getInstance();
 	public Integer periode = 1;
+	public String sport = "";
+	public String result_local = "";
+	public String result_visitor = "";
 	
 	long elapsedTime=0;
 	final Handler hnd = new Handler(); 
@@ -263,7 +267,10 @@ public class baseMatch extends Activity {
             	currentTime = "";
         		running = false;
             	
-            	
+            	if(sport.equalsIgnoreCase("beachvoley")){
+            		LinearLayout ll = (LinearLayout) findViewById(R.id.resultados);  
+            		ll.removeAllViews();
+            	}
             	pointsl.setText("0");            	
             	pointsv.setText("0");            	
             	txt_periode.setText("1");
@@ -280,6 +287,11 @@ public class baseMatch extends Activity {
             	txt+= getString(R.string.visitor)+": "+pointsv.getText().toString()+"\n\r";
             	txt+= getString(R.string.period)+": "+txt_periode.getText().toString()+"\n\r";
             	
+            	if(sport.equalsIgnoreCase("beachvoley")){
+            		txt+= "\n\r"+getString(R.string.result_period);
+            		txt+= "\n\r"+getString(R.string.local)+": "+result_local;
+            		txt+= "\n\r"+getString(R.string.visitor)+": "+result_visitor;
+            	}
             	final Intent emailIntent = new Intent(Intent.ACTION_SEND); 			  
 				emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject_mail)); 
 				emailIntent.putExtra(Intent.EXTRA_TEXT, txt);

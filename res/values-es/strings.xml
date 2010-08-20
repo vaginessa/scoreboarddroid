@@ -17,6 +17,7 @@
     <string name="end_period">Fin del periodo</string>
     <string name="end_game">Final del partido, si haceis click en la tecla menu podreis enviar(sms/email/...) o empezar un nuevo partido.</string>
     <string name="ok">Aceptar</string>
+    <string name="result_period">Resultado de los periodos</string>
     
     <string name="new_game">Nuevo</string>
     <string name="save_game">Guardar</string>

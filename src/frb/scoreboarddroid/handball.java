@@ -16,6 +16,7 @@ public class handball extends baseMatch {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.handballmatch);
         
+        sport = "handball";
         ini();
         
     }
