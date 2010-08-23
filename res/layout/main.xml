@@ -33,7 +33,7 @@
     <LinearLayout
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="wrap_content">
 
 		<Button 
 			android:text="@string/but_new" 
@@ -56,9 +56,9 @@
 	</LinearLayout>
 	
 	<ImageView
-    android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
     android:src="@drawable/fons_down"/>
     
 </LinearLayout>

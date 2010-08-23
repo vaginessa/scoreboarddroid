@@ -24,12 +24,12 @@
     <string name="send_game">Send</string>
     
     <string name="subject_mail">Result match </string>        
-    <string name="select_sport">Select a sport</string>
-    
+    <string name="select_sport">Select a sport</string>    
     <string-array name="esports">
 		<item>HandBall</item>
 		<item>BeachVoley</item>
 	</string-array>
+	
 	<string name="info">Help</string>
 	<string name="send_mail">Send petition</string>
 	<string name="send_question">Send questions, suggestions or mistakes</string>

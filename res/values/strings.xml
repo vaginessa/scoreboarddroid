@@ -23,15 +23,12 @@
     <string name="save_game">Guardar</string>
     <string name="send_game">Enviar</string>
     
-    <string name="subject_mail">Resultat del partit</string>
-    
+    <string name="subject_mail">Resultat del partit</string>    
     <string name="select_sport">Seleccionar un esport</string>    
     <string-array name="esports">
 		<item>Balonmano</item>
 		<item>Voleibol</item>
-	</string-array>
-	
-    
+	</string-array>    
 	
 	<string name="info">Ajuda</string>
 	<string name="send_mail">Enviar consulta</string>

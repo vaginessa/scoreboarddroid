@@ -31,6 +31,19 @@ public class scoreboard_pref extends PreferenceActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+    PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+    SharedPreferences p =   PreferenceManager.getDefaultSharedPreferences(this);
+    String loc = p.getString("idioma", "");
+
+    if( !loc.equalsIgnoreCase("")){
+    	Resources res = getResources();
+        Configuration conf = res.getConfiguration();          
+        DisplayMetrics dm = res.getDisplayMetrics();
+        conf.locale = new Locale(loc);
+        res.updateConfiguration(conf, dm);        	
+    }
+    setContentView(R.layout.main);
+        
 		addPreferencesFromResource(R.xml.preferences);
 
 	}

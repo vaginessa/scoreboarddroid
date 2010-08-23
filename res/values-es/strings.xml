@@ -24,8 +24,7 @@
     <string name="send_game">Enviar</string>
     
     <string name="subject_mail">Resultado del partido</string>        
-    <string name="select_sport">Seleccionar un deporte</string>
-    
+    <string name="select_sport">Seleccionar un deporte</string>    
     <string-array name="esports">
 		<item>Balonmano</item>
 		<item>Voleibol</item>
