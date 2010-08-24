@@ -17,7 +17,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -274,10 +273,10 @@ public class baseMatch extends Activity {
     	TextView  pointsl = (TextView) findViewById(R.id.point_local);
     	TextView  pointsv = (TextView) findViewById(R.id.point_visitor);
     	TextView  txt_periode = (TextView) findViewById(R.id.txt_period);
+    	ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
         switch(item.getItemId()) {            
 
             case 0:            	
-            	ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
             	but_crono.setBackgroundResource(R.drawable.play);
             	crono.stop();
             	crono.setBase(SystemClock.elapsedRealtime());
@@ -326,6 +325,20 @@ public class baseMatch extends Activity {
 				emailIntent.setType("text/plain");
 				startActivity(Intent.createChooser(emailIntent, getString(R.string.app_name)));
 				      
+            	but_crono.setBackgroundResource(R.drawable.play);
+            	crono.stop();
+            	crono.setBase(SystemClock.elapsedRealtime());
+            	fin = false;
+            	currentTime = "";
+        		running = false;
+            	
+            	if(sport.equalsIgnoreCase("beachvoley")){
+            		LinearLayout ll = (LinearLayout) findViewById(R.id.resultados);  
+            		ll.removeAllViews();
+            	}
+            	pointsl.setText("0");            	
+            	pointsv.setText("0");            	
+            	txt_periode.setText("1");
             return true;
 
             case 3:
