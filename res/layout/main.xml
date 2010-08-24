@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:myapp="http://schemas.android.com/apk/res/frb.scoreboarddroid"
+	xmlns:app="http://schemas.android.com/apk/res/frb.scoreboarddroid"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -63,17 +63,16 @@
     android:layout_gravity="bottom"
     android:src="@drawable/fons_down"/>
     
-    <LinearLayout  
-		android:orientation="vertical" 
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content"> 
-		<com.admob.android.ads.AdView   
-			android:id="@+id/ad"  
-			android:layout_width="fill_parent"  
-			android:layout_height="wrap_content" 
-			myapp:backgroundColor="#000000" 
-			myapp:primaryTextColor="#FFFFFF"
-			myapp:secondaryTextColor="#CCCCCC"/>                         
-	</LinearLayout> 
+    <com.admob.android.ads.AdView
+    	android:id="@+id/ad"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:backgroundColor="#000000"
+        app:textColor="#FFFFFF"
+        app:keywords="Android Activity"
+        app:refreshInterval="60"
+        android:gravity="bottom"
+        android:layout_gravity="bottom"/>                         
+
     
 </LinearLayout>

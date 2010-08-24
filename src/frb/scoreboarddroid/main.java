@@ -2,6 +2,8 @@ package frb.scoreboarddroid;
 
 import java.util.Locale;
 
+import com.admob.android.ads.AdView;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -35,6 +37,8 @@ public class main extends Activity {
         
 
         setContentView(R.layout.main);
+        AdView example_adview = (AdView) findViewById(R.id.ad);
+        example_adview.setVisibility(AdView.VISIBLE);
                
     }
     
