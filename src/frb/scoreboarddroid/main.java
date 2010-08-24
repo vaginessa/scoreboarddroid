@@ -32,8 +32,10 @@ public class main extends Activity {
             conf.locale = new Locale(loc);
             res.updateConfiguration(conf, dm);        	
         }
-        setContentView(R.layout.main);
         
+
+        setContentView(R.layout.main);
+               
     }
     
     public void startMatch(View v){    	

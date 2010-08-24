@@ -13,9 +13,9 @@
     <string name="visitor">VISITOR</string>
     <string name="local">LOCAL</string>
     <string name="period">PERIOD</string>
-    <string name="next_time">If you want to start the next period click on the number of period</string>
+    <string name="next_time">If you want to start the next period click over period number</string>
     <string name="end_period">End of period</string>
-    <string name="end_game">End of the game, If you do click the menu button You will be able to send (sms / email /...) or start a new game</string>
+    <string name="end_game">End of game, If you click the menu button you will be able to send the results (sms / email /...) or start a new game</string>
     <string name="ok">OK</string>
     <string name="result_period">Results of period</string>
     
@@ -23,7 +23,7 @@
     <string name="save_game">Save</string>
     <string name="send_game">Send</string>
     
-    <string name="subject_mail">Result match </string>        
+    <string name="subject_mail">Match results</string>        
     <string name="select_sport">Select a sport</string>    
     <string-array name="esports">
 		<item>HandBall</item>
@@ -31,13 +31,13 @@
 	</string-array>
 	
 	<string name="info">Help</string>
-	<string name="send_mail">Send petition</string>
+	<string name="send_mail">Send request</string>
 	<string name="send_question">Send questions, suggestions or mistakes</string>
 	<string name="more_info">More information</string>
 	<string name="url">Visit http://ferran.ribell.com</string>
 	<string name="subject_info_mail">ScoreBoardDroid info</string>
-	<string name="idiomes">Lenguage</string>
-	<string name="txt_idiomes">Lenguage of the application</string>
+	<string name="idiomes">Language</string>
+	<string name="txt_idiomes">Application language</string>
 	<string-array name="idiomes_values">
 		<item>ca</item>
 		<item>es</item>

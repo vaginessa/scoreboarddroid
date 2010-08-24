@@ -13,11 +13,11 @@
     <string name="visitor">VISITANT</string>
     <string name="local">LOCAL</string>
     <string name="period">PERIODE</string>
-    <string name="next_time">Si vols començar la propera part fes clic en el numero del periode</string>
+    <string name="next_time">Si vols començar la propera part fes clic en el número del periode</string>
     <string name="end_period">Fi del periode</string>
-    <string name="end_game">Final del partit, si aprateu la tecla menu podeu envia(sms/email) o començar un nou partit.</string>
+    <string name="end_game">Final del partit, si premeu la tecla menú podeu enviar(sms/email) o començar un nou partit.</string>
     <string name="ok">Acceptar</string>
-    <string name="result_period">Resultat dels periodes</string>
+    <string name="result_period">Resultats dels periodes</string>
     
     <string name="new_game">Nou</string>
     <string name="save_game">Guardar</string>
@@ -32,12 +32,12 @@
 	
 	<string name="info">Ajuda</string>
 	<string name="send_mail">Enviar consulta</string>
-	<string name="send_question">Enviar dubtes, errors o sugeriments</string>
+	<string name="send_question">Enviar dubtes, errors o suggeriments</string>
 	<string name="more_info">Més informació</string>
 	<string name="url">Visita http://ferran.ribell.com</string>
 	<string name="subject_info_mail">ScoreBoardDroid info</string>
 	<string name="idiomes">Idioma</string>
-	<string name="txt_idiomes">Idioma de la aplicació</string>
+	<string name="txt_idiomes">Idioma de l'aplicació</string>
 	<string-array name="idiomes_values">
 		<item>ca</item>
 		<item>es</item>

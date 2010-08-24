@@ -5,7 +5,7 @@
 	<string name="title_beachvoley">Voleibol Playa</string>
 
     <string name="but_new">Empezar partido</string>
-    <string name="but_preferences">Configuracion</string>
+    <string name="but_preferences">Configuración</string>
     <string name="but_exit">Salir</string>
     <string name="but_startOff">Empezar</string>
     <string name="but_startOn">Parar</string>
@@ -15,9 +15,9 @@
     <string name="period">PERIODO</string>
     <string name="next_time">Si quieres empezar la próxima parte haz click en el numero del periodo</string>
     <string name="end_period">Fin del periodo</string>
-    <string name="end_game">Final del partido, si haceis click en la tecla menu podreis enviar(sms/email/...) o empezar un nuevo partido.</string>
+    <string name="end_game">Final del partido, si presionais la tecla menú podréis enviar(sms/email/...) o empezar un nuevo partido.</string>
     <string name="ok">Aceptar</string>
-    <string name="result_period">Resultado de los periodos</string>
+    <string name="result_period">Resultados de los periodos</string>
     
     <string name="new_game">Nuevo</string>
     <string name="save_game">Guardar</string>
@@ -33,7 +33,7 @@
 	<string name="info">Ayuda</string>
 	<string name="send_mail">Enviar consulta</string>
 	<string name="send_question">Enviar dudas, errores o sugerencias</string>
-	<string name="more_info">Mas información</string>
+	<string name="more_info">Más información</string>
 	<string name="url">Visita http://ferran.ribell.com</string>
 	<string name="subject_info_mail">ScoreBoardDroid info</string>
 	<string name="idiomes">Idioma</string>
