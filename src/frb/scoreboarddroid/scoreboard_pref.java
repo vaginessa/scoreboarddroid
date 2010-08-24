@@ -13,13 +13,11 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.DialogPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.DisplayMetrics;
-import android.util.Log;
 
 /**
  *
@@ -31,19 +29,17 @@ public class scoreboard_pref extends PreferenceActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-    PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-    SharedPreferences p =   PreferenceManager.getDefaultSharedPreferences(this);
-    String loc = p.getString("idioma", "");
+		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        SharedPreferences p =   PreferenceManager.getDefaultSharedPreferences(this);
+        String loc = p.getString("idioma", "");
 
-    if( !loc.equalsIgnoreCase("")){
-    	Resources res = getResources();
-        Configuration conf = res.getConfiguration();          
-        DisplayMetrics dm = res.getDisplayMetrics();
-        conf.locale = new Locale(loc);
-        res.updateConfiguration(conf, dm);        	
-    }
-    setContentView(R.layout.main);
-        
+        if( !loc.equalsIgnoreCase("")){
+        	Resources res = getResources();
+            Configuration conf = res.getConfiguration();          
+            DisplayMetrics dm = res.getDisplayMetrics();
+            conf.locale = new Locale(loc);
+            res.updateConfiguration(conf, dm);        	
+        }
 		addPreferencesFromResource(R.xml.preferences);
 
 	}
@@ -67,7 +63,7 @@ public class scoreboard_pref extends PreferenceActivity {
 			i.setData(Uri.parse("http://ferran.ribell.com/ScoreBoardDroid"));
 			startActivity(i);
 		}
-
+		
 		return super.onPreferenceTreeClick(preferenceScreen, preference);
 	}
 	@Override

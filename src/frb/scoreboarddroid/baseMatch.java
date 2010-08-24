@@ -1,6 +1,7 @@
 package frb.scoreboarddroid;
 
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -8,10 +9,16 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
+import android.text.format.DateFormat;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,7 +58,18 @@ public class baseMatch extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    	super.onCreate(savedInstanceState);    	
+    	super.onCreate(savedInstanceState);   
+    	PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        SharedPreferences p =   PreferenceManager.getDefaultSharedPreferences(this);
+        String loc = p.getString("idioma", "");
+
+        if( !loc.equalsIgnoreCase("")){
+        	Resources res = getResources();
+            Configuration conf = res.getConfiguration();          
+            DisplayMetrics dm = res.getDisplayMetrics();
+            conf.locale = new Locale(loc);
+            res.updateConfiguration(conf, dm);        	
+        }
     }
     
     
@@ -281,8 +299,18 @@ public class baseMatch extends Activity {
             return true;
             
             case 2:
-            	
-            	String txt = getString(R.string.time_match)+": "+crono.getBase()+"\n\r"; 
+            	long minutes = 0;
+            	long seconds = 0;
+            	if(currentTime.equalsIgnoreCase("")){
+        			minutes=((SystemClock.elapsedRealtime()-crono.getBase())/1000)/60;
+        			seconds=((SystemClock.elapsedRealtime()-crono.getBase())/1000)%60;
+            	}else{
+            		minutes=((elapsedTime-crono.getBase())/1000)/60;
+        			seconds=((elapsedTime-crono.getBase())/1000)%60;		
+        		}
+            	            
+            	String txt = date_match.getTime().toLocaleString()+"\n\r\n\r"; 
+            	txt+= getString(R.string.time_match)+": "+minutes+":"+seconds+"\n\r";
             	txt+= getString(R.string.local)+": "+pointsl.getText().toString()+"\n\r";
             	txt+= getString(R.string.visitor)+": "+pointsv.getText().toString()+"\n\r";
             	txt+= getString(R.string.period)+": "+txt_periode.getText().toString()+"\n\r";

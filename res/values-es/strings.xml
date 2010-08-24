@@ -48,4 +48,10 @@
 		<item>Español</item>
 		<item>English</item>
 	</string-array>
+
+	<string name="extras"></string>
+	<string name="developer">Desarrollador</string>
+	<string name="txt_developer">Ferran Ribell Bachs</string>
+	<string name="thanks">Agradecimientos</string>
+	<string name="thanks_to">Josep Mª Nogueras</string>
 </resources>

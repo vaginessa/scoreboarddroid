@@ -20,5 +20,16 @@
 			android:key="url"
 			android:summary="@string/url"/>
 	</PreferenceCategory>
+	
+	<PreferenceCategory android:title="@string/extras">
+		<Preference 
+			android:title="@string/developer"
+			android:key="extras"
+			android:summary="@string/txt_developer"/>
+		<Preference 
+			android:title="@string/thanks"
+			android:key="thanks"
+			android:summary="@string/thanks_to"/>
+	</PreferenceCategory>
 
 </PreferenceScreen>
