@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         app:backgroundColor="#000000"
         app:textColor="#FFFFFF"
-        app:keywords="Android Activity"
+        app:keywords="Sport"
         app:refreshInterval="60"
         android:gravity="bottom"
         android:layout_gravity="bottom"/>                         

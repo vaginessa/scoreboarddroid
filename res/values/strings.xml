@@ -37,7 +37,7 @@
 	<string name="url">Visita http://ferran.ribell.com</string>
 	<string name="subject_info_mail">ScoreBoardDroid info</string>
 	<string name="idiomes">Idioma</string>
-	<string name="txt_idiomes">Idioma de l'aplicació</string>
+	<string name="txt_idiomes">Idioma de l\'aplicació</string>
 	<string-array name="idiomes_values">
 		<item>ca</item>
 		<item>es</item>
