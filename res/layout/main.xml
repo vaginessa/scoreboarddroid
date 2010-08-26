@@ -67,12 +67,13 @@
     	android:id="@+id/ad"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:visibility="visible"
         app:backgroundColor="#000000"
         app:textColor="#FFFFFF"
-        app:keywords="Sport"
-        app:refreshInterval="60"
+        app:keywords="Android Sport"
+        app:isGoneWithoutAd="false"
+        app:testing="false"        
         android:gravity="bottom"
-        android:layout_gravity="bottom"/>                         
-
+        android:layout_gravity="bottom"/>
     
 </LinearLayout>

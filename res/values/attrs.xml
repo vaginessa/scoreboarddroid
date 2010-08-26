@@ -6,5 +6,6 @@
         <attr name="keywords" format="string" />
         <attr name="refreshInterval" format="integer" />
         <attr name="isGoneWithoutAd" format="boolean" />
+        <attr name="testing" format="boolean" />
     </declare-styleable>
 </resources>
