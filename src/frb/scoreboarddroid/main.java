@@ -2,6 +2,7 @@ package frb.scoreboarddroid;
 
 import java.util.Locale;
 
+import com.admob.android.ads.AdManager;
 import com.admob.android.ads.AdView;
 
 import android.app.Activity;
@@ -34,12 +35,9 @@ public class main extends Activity {
             conf.locale = new Locale(loc);
             res.updateConfiguration(conf, dm);        	
         }
-        
-
+    
         setContentView(R.layout.main);
-        AdView example_adview = (AdView) findViewById(R.id.ad);
-        example_adview.setVisibility(AdView.VISIBLE);
-               
+              
     }
     
     public void startMatch(View v){    	

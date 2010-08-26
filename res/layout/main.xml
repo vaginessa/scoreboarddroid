@@ -66,13 +66,11 @@
     <com.admob.android.ads.AdView
     	android:id="@+id/ad"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:visibility="visible"
         app:backgroundColor="#000000"
         app:textColor="#FFFFFF"
-        app:keywords="Android Sport"
-        app:isGoneWithoutAd="false"
-        app:testing="false"        
+        app:keywords="Android game"
         android:gravity="bottom"
         android:layout_gravity="bottom"/>
     
