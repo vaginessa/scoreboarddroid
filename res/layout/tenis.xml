@@ -5,6 +5,7 @@
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
   android:orientation="vertical"
+  android:background="@drawable/bkg_tennis"
   android:gravity="center_horizontal">	
 	
 	<RelativeLayout
@@ -176,7 +177,8 @@
 			<LinearLayout
 			  android:layout_width="wrap_content"
 			  android:layout_height="wrap_content"
-			  android:orientation="vertical">
+			  android:orientation="vertical"
+			  android:background="#66EEEEEE">
 				<TextView
 				  	android:text="LOC:"
 				  	android:layout_width="wrap_content"
