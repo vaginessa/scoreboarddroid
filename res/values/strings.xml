@@ -3,6 +3,7 @@
 	<string name="app_name">Marcador Electrònic</string>
 	<string name="title_handball">Balonmano</string>
 	<string name="title_beachvoley">Voleibol Platja</string>
+	<string name="title_tenis">Tenis</string>
 	
     <string name="but_new">Començar partit</string>
     <string name="but_preferences">Configuració</string>
@@ -17,8 +18,10 @@
     <string name="end_period">Fi del periode</string>
     <string name="end_game">Final del partit, si premeu la tecla menú podeu enviar(sms/email) o començar un nou partit.</string>
     <string name="ok">Acceptar</string>
+    <string name="ko">Cancelar</string>
     <string name="result_period">Resultats dels periodes</string>
-    
+    <string name="txt_tiebreak">Vols jugar el tiebreak?</string>
+        
     <string name="new_game">Nou</string>
     <string name="save_game">Guardar</string>
     <string name="send_game">Enviar</string>
@@ -28,6 +31,7 @@
     <string-array name="esports">
 		<item>Balonmano</item>
 		<item>Voleibol</item>
+		<item>Tenis</item>
 	</string-array>    
 	
 	<string name="info">Ajuda</string>

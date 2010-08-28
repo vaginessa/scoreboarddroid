@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res/frb.scoreboarddroid"
+	xmlns:myapp="http://schemas.android.com/apk/res/frb.scoreboarddroid"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/background"
-    android:padding="20dip"    
-    >
-    
+    android:background="@color/background">
+     
     <LinearLayout
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    >
+    android:layout_marginLeft="20dip"
+    android:layout_marginRight="20dip">
 	    <ImageView
 	    	android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
 	    	android:src="@drawable/scoreboard"
+	    	android:layout_gravity="center"
 	    />
 	    <TextView
 	    	android:text="ScoreBoardDroid"
@@ -35,8 +34,8 @@
     <LinearLayout
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_height="wrap_content"
+	android:padding="20dip">
 		<Button 
 			android:text="@string/but_new" 
 			android:id="@+id/but_new" 
@@ -57,21 +56,29 @@
 			android:onClick="exit"/>
 	</LinearLayout>
 	
-	<ImageView
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom"
-    android:src="@drawable/fons_down"/>
+    <RelativeLayout
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:layout_alignParentBottom="true"
+       android:gravity="bottom">
+       
+		<ImageView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="bottom"
+	    android:src="@drawable/fons_down"/>
+		<com.admob.android.ads.AdView   
+			android:id="@+id/ad"  
+			android:layout_width="fill_parent"  
+			android:layout_height="wrap_content" 
+			android:visibility="visible"		
+			android:layout_gravity="bottom"
+			android:layout_alignParentBottom="true"
+			myapp:backgroundColor="#000000" 
+			myapp:primaryTextColor="#FFFFFF"
+			myapp:secondaryTextColor="#CCCCCC"
+			myapp:keywords="Android game"/>
+	</RelativeLayout>   
     
-    <com.admob.android.ads.AdView
-    	android:id="@+id/ad"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:visibility="visible"
-        app:backgroundColor="#000000"
-        app:textColor="#FFFFFF"
-        app:keywords="Android game"
-        android:gravity="bottom"
-        android:layout_gravity="bottom"/>
     
 </LinearLayout>

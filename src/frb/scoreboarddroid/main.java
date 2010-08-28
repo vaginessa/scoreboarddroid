@@ -2,9 +2,6 @@ package frb.scoreboarddroid;
 
 import java.util.Locale;
 
-import com.admob.android.ads.AdManager;
-import com.admob.android.ads.AdView;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,6 +12,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 
 public class main extends Activity {
@@ -58,6 +56,14 @@ public class main extends Activity {
 	            	Intent new_intent = new Intent(frb.scoreboarddroid.main.this, beachvoley.class);
 	                new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 	                startActivity(new_intent);	     
+    	        }
+    	        
+    	        if( item == 2 ){
+    	        	
+	        		Intent new_intent = new Intent(frb.scoreboarddroid.main.this, tenis.class);
+	                new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	                startActivity(new_intent);
+					            		     
     	        }
     	        
     	    }

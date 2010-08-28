@@ -3,6 +3,7 @@
 	<string name="app_name">Electronic Scoreboard</string>
 	<string name="title_handball">HandBall</string>
 	<string name="title_beachvoley">BeachVoley</string>
+	<string name="title_tenis">Tennis</string>
 
     <string name="but_new">Start Game</string>
     <string name="but_preferences">Preferences</string>
@@ -18,6 +19,7 @@
     <string name="end_game">End of game, If you click the menu button you will be able to send the results (sms / email /...) or start a new game</string>
     <string name="ok">OK</string>
     <string name="result_period">Results of period</string>
+    <string name="txt_tiebreak">Play tiebreak?</string>
     
     <string name="new_game">New</string>
     <string name="save_game">Save</string>
@@ -28,6 +30,7 @@
     <string-array name="esports">
 		<item>HandBall</item>
 		<item>BeachVoley</item>
+		<item>Tennis</item>
 	</string-array>
 	
 	<string name="info">Help</string>

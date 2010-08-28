@@ -41,6 +41,7 @@ public class baseMatch extends Activity {
 	public String sport = "";
 	public String result_local = "";
 	public String result_visitor = "";
+	public String result_time = "";
 	
 	long elapsedTime=0;
 	final Handler hnd = new Handler(); 
@@ -107,6 +108,12 @@ public class baseMatch extends Activity {
         		arg0.setText(currentTime);
         	}
         });
+        
+		crono.stop();
+    	crono.setBase(SystemClock.elapsedRealtime());
+    	fin = false;
+    	currentTime = "";
+		running = false;
         
         //evento click de los botones
         ImageButton but_addLocal = (ImageButton) this.findViewById(R.id.but_addLocal);
@@ -309,15 +316,22 @@ public class baseMatch extends Activity {
         		}
             	            
             	String txt = date_match.getTime().toLocaleString()+"\n\r\n\r"; 
-            	txt+= getString(R.string.time_match)+": "+minutes+":"+seconds+"\n\r";
-            	txt+= getString(R.string.local)+": "+pointsl.getText().toString()+"\n\r";
-            	txt+= getString(R.string.visitor)+": "+pointsv.getText().toString()+"\n\r";
-            	txt+= getString(R.string.period)+": "+txt_periode.getText().toString()+"\n\r";
             	
-            	if(sport.equalsIgnoreCase("beachvoley")){
+            	
+            	if(sport.equalsIgnoreCase("beachvoley") ){
             		txt+= "\n\r"+getString(R.string.result_period);
             		txt+= "\n\r"+getString(R.string.local)+": "+result_local;
             		txt+= "\n\r"+getString(R.string.visitor)+": "+result_visitor;
+            	}else if( sport.equalsIgnoreCase("tenis")){
+            		txt+= "\n\r"+getString(R.string.result_period);
+            		txt+= "\n\r"+getString(R.string.local)+": "+result_local;
+            		txt+= "\n\r"+getString(R.string.visitor)+": "+result_visitor;
+            		txt+= "\n\r"+getString(R.string.time_match)+": "+result_time;
+            	}else{
+            		txt+= getString(R.string.time_match)+": "+minutes+":"+seconds+"\n\r";
+                	txt+= getString(R.string.local)+": "+pointsl.getText().toString()+"\n\r";
+                	txt+= getString(R.string.visitor)+": "+pointsv.getText().toString()+"\n\r";
+                	txt+= getString(R.string.period)+": "+txt_periode.getText().toString()+"\n\r";
             	}
             	final Intent emailIntent = new Intent(Intent.ACTION_SEND); 			  
 				emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject_mail)); 
