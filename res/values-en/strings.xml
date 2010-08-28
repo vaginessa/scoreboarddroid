@@ -20,6 +20,7 @@
     <string name="ok">OK</string>
     <string name="result_period">Results of period</string>
     <string name="txt_tiebreak">Play tiebreak?</string>
+    <string name="txt_periodvoley">To change set, click over period number</string>
     
     <string name="new_game">New</string>
     <string name="save_game">Save</string>

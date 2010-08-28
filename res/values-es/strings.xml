@@ -20,6 +20,7 @@
     <string name="ok">Aceptar</string>
     <string name="result_period">Resultados de los periodos</string>
     <string name="txt_tiebreak">Quieres jugar el tiebreak?</string>
+    <string name="txt_periodvoley">Para realizar un cambio de set, haz click en el numero del periodo</string>
     
     <string name="new_game">Nuevo</string>
     <string name="save_game">Guardar</string>

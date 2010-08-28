@@ -1,5 +1,7 @@
 package frb.scoreboarddroid;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -144,4 +146,22 @@ public class beachvoley extends baseMatch {
 	     return tabla;
     }
     
+    public void infoPeriod(View v){
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.info);
+    	builder.setMessage(R.string.txt_periodvoley);
+    	builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				try {
+					this.finalize();
+				} catch (Throwable e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}						
+			}
+    	});
+    	AlertDialog alert = builder.create();
+    	alert.show();
+    }
 }
