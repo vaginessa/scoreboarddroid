@@ -215,8 +215,7 @@ public class tenis extends baseMatch {
 		TextView  setv = (TextView) findViewById(R.id.set_visitor);
 		TextView  pointsl = (TextView) findViewById(R.id.point_local);
 		TextView  pointsv = (TextView) findViewById(R.id.point_visitor);
-		TextView  txtperiod = (TextView) findViewById(R.id.txt_period);
-		ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
+		
 		Integer dif = 0;
 		
 		if(tiebreak == 1){
@@ -233,110 +232,96 @@ public class tenis extends baseMatch {
 	    		}    			
 	    		pointsl.setText("0");
 	    		pointsv.setText("0");
+	    		saveSet();
 			}
-		}
-		if((Integer.parseInt(setl.getText().toString())>=6 ||
+		}else if((Integer.parseInt(setl.getText().toString())==6 &&
+				Integer.parseInt(setv.getText().toString())==6) && tiebreak != 1){
+			
+		
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("TieBreak");
+	    	builder.setMessage(R.string.txt_tiebreak);
+	    	builder.setNegativeButton(R.string.ko, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					try {
+						tiebreak = 2;
+						this.finalize();
+					} catch (Throwable e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}						
+				}
+	    	});
+	    	builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					try {
+						tiebreak = 1;
+					} catch (Throwable e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}						
+				}
+	    	});
+	    	AlertDialog alert = builder.create();
+	    	alert.show();
+		}else if((Integer.parseInt(setl.getText().toString())>=6 ||
 				Integer.parseInt(setv.getText().toString())>=6) && tiebreak != 1){
 			
 			dif = Integer.parseInt(setl.getText().toString()) - Integer.parseInt(setv.getText().toString());
 			if(dif == 1 || dif == -1){
 				
-				AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setTitle("TieBreak");
-		    	builder.setMessage(R.string.txt_tiebreak);
-		    	builder.setNegativeButton(R.string.ko, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						try {
-							tiebreak = 2;
-							this.finalize();
-						} catch (Throwable e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}						
-					}
-		    	});
-		    	builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						try {
-							tiebreak = 1;
-						} catch (Throwable e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}						
-					}
-		    	});
-		    	AlertDialog alert = builder.create();
-		    	alert.show();
+				
 			}else if(tiebreak == 2){
 				dif = Integer.parseInt(setl.getText().toString()) - Integer.parseInt(setv.getText().toString());
 				if(dif >= 2 || dif <= -2){
-					long minutes = 0;
-		        	long seconds = 0;
-		        	if(currentTime.equalsIgnoreCase("")){
-		    			minutes=((SystemClock.elapsedRealtime()-crono.getBase())/1000)/60;
-		    			seconds=((SystemClock.elapsedRealtime()-crono.getBase())/1000)%60;
-		        	}else{
-		        		minutes=((elapsedTime-crono.getBase())/1000)/60;
-		    			seconds=((elapsedTime-crono.getBase())/1000)%60;		
-		    		}
-		        	
-					LinearLayout ll = (LinearLayout) findViewById(R.id.resultados);        		
-					TableLayout etiquetaTabla = dibujarTabla(1,3,1,"#FFFFFF",
-					setl.getText().toString(),
-					setv.getText().toString(),
-					minutes+":"+seconds);
-					ll.addView(etiquetaTabla);
-					
-					result_local+= setl.getText().toString()+",";
-					result_visitor+= setv.getText().toString()+",";
-					result_time+= minutes+":"+seconds+",";
-					
-					setl.setText("0");
-					setv.setText("0");
-					Integer set = Integer.parseInt(txtperiod.getText().toString())+1;
-					txtperiod.setText(set.toString());
-					but_crono.setBackgroundResource(R.drawable.play);
-					crono.stop();
-		        	crono.setBase(SystemClock.elapsedRealtime());
-		        	fin = false;
-		        	currentTime = "";
-		    		running = false;
+					saveSet();
 				}
 			}else{
-				long minutes = 0;
-	        	long seconds = 0;
-	        	if(currentTime.equalsIgnoreCase("")){
-	    			minutes=((SystemClock.elapsedRealtime()-crono.getBase())/1000)/60;
-	    			seconds=((SystemClock.elapsedRealtime()-crono.getBase())/1000)%60;
-	        	}else{
-	        		minutes=((elapsedTime-crono.getBase())/1000)/60;
-	    			seconds=((elapsedTime-crono.getBase())/1000)%60;		
-	    		}
-	        	
-				LinearLayout ll = (LinearLayout) findViewById(R.id.resultados);        		
-				TableLayout etiquetaTabla = dibujarTabla(1,3,1,"#FFFFFF",
-				setl.getText().toString(),
-				setv.getText().toString(),
-				minutes+":"+seconds);
-				ll.addView(etiquetaTabla);
-				result_local+= setl.getText().toString()+",";
-				result_visitor+= setv.getText().toString()+",";
-				result_time+= minutes+":"+seconds+",";
-				setl.setText("0");
-				setv.setText("0");
-				Integer set = Integer.parseInt(txtperiod.getText().toString())+1;
-				txtperiod.setText(set.toString());
-				but_crono.setBackgroundResource(R.drawable.play);
-				crono.stop();
-	        	crono.setBase(SystemClock.elapsedRealtime());
-	        	fin = false;
-	        	currentTime = "";
-	    		running = false;
+				saveSet();
 			}
 			
 		}
 		    	
+    }
+    
+    public void saveSet(){
+    	TextView  setl = (TextView) findViewById(R.id.set_local);
+		TextView  setv = (TextView) findViewById(R.id.set_visitor);
+		TextView  txtperiod = (TextView) findViewById(R.id.txt_period);
+		ImageButton but_crono = (ImageButton) findViewById(R.id.but_start);
+		
+    	long minutes = 0;
+    	long seconds = 0;
+    	if(currentTime.equalsIgnoreCase("")){
+			minutes=0;
+			seconds=0;
+    	}else{
+    		minutes=((elapsedTime-crono.getBase())/1000)/60;
+			seconds=((elapsedTime-crono.getBase())/1000)%60;		
+		}
+    	
+		LinearLayout ll = (LinearLayout) findViewById(R.id.resultados);        		
+		TableLayout etiquetaTabla = dibujarTabla(1,3,1,"#FFFFFF",
+		setl.getText().toString(),
+		setv.getText().toString(),
+		minutes+":"+seconds);
+		ll.addView(etiquetaTabla);
+		
+		result_local+= setl.getText().toString()+",";
+		result_visitor+= setv.getText().toString()+",";
+		result_time+= minutes+":"+seconds+",";
+		
+		setl.setText("0");
+		setv.setText("0");
+		Integer set = Integer.parseInt(txtperiod.getText().toString())+1;
+		txtperiod.setText(set.toString());
+		but_crono.setBackgroundResource(R.drawable.play);
+		crono.stop();
+    	crono.setBase(SystemClock.elapsedRealtime());
+    	fin = false;
+    	currentTime = "";
+		running = false;
     }
 }
