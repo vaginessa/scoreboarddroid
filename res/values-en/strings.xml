@@ -4,6 +4,8 @@
 	<string name="title_handball">HandBall</string>
 	<string name="title_beachvoley">BeachVoley</string>
 	<string name="title_tenis">Tennis</string>
+	<string name="title_soccer">Soccer</string>
+	<string name="title_futsal">Futsal</string>
 
     <string name="but_new">Start Game</string>
     <string name="but_preferences">Preferences</string>
@@ -32,6 +34,8 @@
 		<item>HandBall</item>
 		<item>BeachVoley</item>
 		<item>Tennis</item>
+		<item>Soccer</item>
+		<item>Futsal</item>
 	</string-array>
 	
 	<string name="info">Help</string>

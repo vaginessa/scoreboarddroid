@@ -4,6 +4,8 @@
 	<string name="title_handball">Balonmano</string>
 	<string name="title_beachvoley">Voleibol Playa</string>
 	<string name="title_tenis">Tenis</string>
+  <string name="title_soccer">Futbol</string>
+  <string name="title_futsal">Futbol Sala</string>
 
     <string name="but_new">Empezar partido</string>
     <string name="but_preferences">Configuración</string>
@@ -32,6 +34,8 @@
 		<item>Balonmano</item>
 		<item>Voleibol</item>
 		<item>Tenis</item>
+		<item>Futbol</item>
+		<item>Futbol Sala</item>
 	</string-array>
 	
 	<string name="info">Ayuda</string>

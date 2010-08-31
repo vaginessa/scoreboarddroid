@@ -27,6 +27,16 @@
             </intent-filter>
         </activity>
         
+        <activity android:name=".soccer" android:label="@string/title_soccer" android:screenOrientation="landscape">
+            <intent-filter>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".futsal" android:label="@string/title_futsal" android:screenOrientation="landscape">
+            <intent-filter>
+            </intent-filter>
+        </activity>
+        
         <activity android:name=".scoreboard_pref" android:icon="@drawable/icon">
               <intent-filter>
               </intent-filter>
