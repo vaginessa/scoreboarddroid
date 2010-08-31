@@ -65,6 +65,22 @@ public class main extends Activity {
 					            		     
     	        }
     	        
+    	        if( item == 3 ){
+    	        	
+	        		Intent new_intent = new Intent(frb.scoreboarddroid.main.this, soccer.class);
+	                new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	                startActivity(new_intent);
+					            		     
+    	        }
+    	        
+    	        if( item == 4 ){
+    	        	
+	        		Intent new_intent = new Intent(frb.scoreboarddroid.main.this, futsal.class);
+	                new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	                startActivity(new_intent);
+					            		     
+    	        }
+    	        
     	    }
     	});
     	AlertDialog alert = builder.create();
