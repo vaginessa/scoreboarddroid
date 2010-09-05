@@ -7,6 +7,7 @@ import java.util.TimerTask;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +16,7 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
@@ -30,6 +32,8 @@ import android.widget.Chronometer.OnChronometerTickListener;
 
 
 public class baseMatch extends Activity {
+    
+	protected PowerManager.WakeLock mWakeLock;
 	
 	public Integer TIME_MATCH = 30;
 	public Integer MAX_PERIODE = 2;	
@@ -70,6 +74,11 @@ public class baseMatch extends Activity {
             conf.locale = new Locale(loc);
             res.updateConfiguration(conf, dm);        	
         }
+        
+        final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        this.mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "etiqueta");
+        this.mWakeLock.acquire();
+
     }
     
     
@@ -361,4 +370,16 @@ public class baseMatch extends Activity {
         }
         return super.onMenuItemSelected(featureId, item);
     }
+    
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public void onDestroy() {
+         this.mWakeLock.release();
+         super.onDestroy();
+    }
+    
 }

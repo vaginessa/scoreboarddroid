@@ -12,27 +12,27 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".handball" android:label="@string/title_handball" android:screenOrientation="landscape">
+        <activity android:name=".handball" android:label="@string/title_handball" android:screenOrientation="landscape" android:configChanges="keyboard|keyboardHidden|orientation">
             <intent-filter>
             </intent-filter>
         </activity>
 
-		<activity android:name=".beachvoley" android:label="@string/title_beachvoley" android:screenOrientation="landscape">
+		<activity android:name=".beachvoley" android:label="@string/title_beachvoley" android:screenOrientation="landscape" android:configChanges="keyboard|keyboardHidden|orientation">
             <intent-filter>
             </intent-filter>
         </activity>
         
-        <activity android:name=".tenis" android:label="@string/title_tenis" android:screenOrientation="landscape">
+        <activity android:name=".tenis" android:label="@string/title_tenis" android:screenOrientation="landscape" android:configChanges="keyboard|keyboardHidden|orientation">
             <intent-filter>
             </intent-filter>
         </activity>
         
-        <activity android:name=".soccer" android:label="@string/title_soccer" android:screenOrientation="landscape">
+        <activity android:name=".soccer" android:label="@string/title_soccer" android:screenOrientation="landscape" android:configChanges="keyboard|keyboardHidden|orientation">
             <intent-filter>
             </intent-filter>
         </activity>
         
-        <activity android:name=".futsal" android:label="@string/title_futsal" android:screenOrientation="landscape">
+        <activity android:name=".futsal" android:label="@string/title_futsal" android:screenOrientation="landscape" android:configChanges="keyboard|keyboardHidden|orientation">
             <intent-filter>
             </intent-filter>
         </activity>
@@ -49,4 +49,5 @@
     <uses-sdk android:minSdkVersion="4" />
 	<uses-permission android:name="android.permission.INTERNET" /> 
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
 </manifest> 
