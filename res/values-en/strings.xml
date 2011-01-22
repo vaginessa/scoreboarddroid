@@ -6,6 +6,7 @@
 	<string name="title_tenis">Tennis</string>
 	<string name="title_soccer">Soccer</string>
 	<string name="title_futsal">Futsal</string>
+	<string name="title_basquet">Basketball</string>
 
     <string name="but_new">Start Game</string>
     <string name="but_preferences">Preferences</string>
@@ -23,6 +24,7 @@
     <string name="result_period">Results of period</string>
     <string name="txt_tiebreak">Play tiebreak?</string>
     <string name="txt_periodvoley">To change set, click over period number</string>
+    <string name="faltes">Faults:</string>
     
     <string name="new_game">New</string>
     <string name="save_game">Save</string>
@@ -36,6 +38,7 @@
 		<item>Tennis</item>
 		<item>Soccer</item>
 		<item>Futsal</item>
+		<item>Basketball</item>
 	</string-array>
 	
 	<string name="info">Help</string>

@@ -5,7 +5,7 @@
 	<string name="title_beachvoley">Voleibol Playa</string>
 	<string name="title_tenis">Tenis</string>
   <string name="title_soccer">Futbol</string>
-  <string name="title_futsal">Futbol Sala</string>
+  <string name="title_basquet">Baloncesto</string>
 
     <string name="but_new">Empezar partido</string>
     <string name="but_preferences">Configuración</string>
@@ -23,6 +23,7 @@
     <string name="result_period">Resultados de los periodos</string>
     <string name="txt_tiebreak">Quieres jugar el tiebreak?</string>
     <string name="txt_periodvoley">Para realizar un cambio de set, haz click en el numero del periodo</string>
+    <string name="faltes">Faltas:</string>
     
     <string name="new_game">Nuevo</string>
     <string name="save_game">Guardar</string>
@@ -36,6 +37,7 @@
 		<item>Tenis</item>
 		<item>Futbol</item>
 		<item>Futbol Sala</item>
+		<item>Baloncesto</item>
 	</string-array>
 	
 	<string name="info">Ayuda</string>

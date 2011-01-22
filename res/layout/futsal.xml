@@ -74,6 +74,26 @@
 	   			android:layout_height="wrap_content"
 	   			android:background="@drawable/remove"/>
 
+		<LinearLayout
+		  android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:orientation="horizontal"
+		  android:layout_alignParentLeft="true"
+		  android:gravity="center">
+			<TextView
+			  	android:id="@+id/faltes_local"
+			  	android:text="@string/faltes"
+			  	android:layout_width="wrap_content"
+			  	android:layout_height="wrap_content"
+			  	android:textColor="#000000"
+			  	android:textSize="14sp"
+			  	/>
+			 <ImageButton 
+						android:id="@+id/but_addfaltalocal" 
+						android:layout_width="wrap_content" 
+						android:layout_height="wrap_content"
+						android:background="@drawable/add"/>
+			</LinearLayout>
 		</LinearLayout>  
 		
 		<LinearLayout
@@ -132,6 +152,26 @@
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content"
 				android:background="@drawable/remove"/>
+	<LinearLayout
+		  android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:orientation="horizontal"
+		  android:layout_alignParentLeft="true"
+		  android:gravity="center">
+		<TextView
+		  	android:id="@+id/faltes_visitor"
+		  	android:text="@string/faltes"
+		  	android:layout_width="wrap_content"
+		  	android:layout_height="wrap_content"
+		  	android:textColor="#000000"
+		  	android:textSize="14sp"
+		  	/>
+		 <ImageButton 
+					android:id="@+id/but_addfaltavisitor" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:background="@drawable/add"/>
+		</LinearLayout>
 	   </LinearLayout>	
 	
 	

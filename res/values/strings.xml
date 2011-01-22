@@ -6,6 +6,7 @@
 	<string name="title_tenis">Tenis</string>
 	<string name="title_soccer">Futbol</string>
 	<string name="title_futsal">Futbol Sala</string>
+	<string name="title_basquet">Bàsquet</string>
 	
     <string name="but_new">Començar partit</string>
     <string name="but_preferences">Configuració</string>
@@ -24,6 +25,7 @@
     <string name="result_period">Resultats dels periodes</string>
     <string name="txt_tiebreak">Vols jugar el tiebreak?</string>
     <string name="txt_periodvoley">Per fer canvi de set, fes clic en el número del periode</string>
+    <string name="faltes">Faltes:</string>
         
     <string name="new_game">Nou</string>
     <string name="save_game">Guardar</string>
@@ -37,6 +39,7 @@
 		<item>Tenis</item>
 		<item>Futbol</item>
 		<item>Futbol Sala</item>
+		<item>Bàsquet</item>
 	</string-array>    
 	
 	<string name="info">Ajuda</string>

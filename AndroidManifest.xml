@@ -2,7 +2,7 @@
 <manifest 
 	  xmlns:android="http://schemas.android.com/apk/res/android"
       package="frb.scoreboarddroid"
-      android:versionCode="6" android:versionName="3.2">
+      android:versionName="4" android:versionCode="7">
     <application android:icon="@drawable/icon" android:label="@string/app_name">
         <activity android:name=".main"
                   android:label="@string/app_name" android:screenOrientation="portrait">
@@ -33,6 +33,11 @@
         </activity>
         
         <activity android:name=".futsal" android:label="@string/title_futsal" android:screenOrientation="landscape" android:configChanges="keyboard|keyboardHidden|orientation">
+            <intent-filter>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".basquet" android:label="@string/title_basquet" android:screenOrientation="landscape" android:configChanges="keyboard|keyboardHidden|orientation">
             <intent-filter>
             </intent-filter>
         </activity>

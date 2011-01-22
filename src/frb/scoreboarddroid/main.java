@@ -81,6 +81,14 @@ public class main extends Activity {
 					            		     
     	        }
     	        
+	        	if( item == 5 ){
+    	        	
+	        		Intent new_intent = new Intent(frb.scoreboarddroid.main.this, basquet.class);
+	                new_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	                startActivity(new_intent);
+					            		     
+    	        }
+    	        
     	    }
     	});
     	AlertDialog alert = builder.create();
